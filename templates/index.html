@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <!-- <link rel='stylesheet' href='../static/style.css'> -->
+    </head>
+    <body>
+        <div>
+            <div class='center'>
+                <h1>Wind turbine power prediction</h1>
+
+                    <!-- Main Input For Receiving Query to our ML -->
+                    <form name= response action="." method="POST">
+                        <input type="text" name="Air_temperature"  placeholder="Air temperature" required="required" />
+                        <input type="text" name="Pressure"  placeholder="Pressure" required="required" />
+                        <input type="text" name="Wind_direction"  placeholder="Wind direction" required="required" />
+                        <input type="text" name="Wind_speed" placeholder="Wind_speed" required="required" />
+                        <br>
+						<h1>Choose your Wind turbine</h1>
+						<br>
+						<select name="type">
+							<option value ="gamesa 2.0MW">Gamesa 2.0MW</option>
+                            <option value ="fuhrlander 1.5MW">Fuhrlander 1.5MW</option>
+                            <option value ="areva multibrid 5MW">Avera multibrid 5MW</option>
+							<option value ="General Electric 1.6 MW">General Electric 1.6 MW</option>
+							<option value ="siemens SWT-3.0MW">siemens SWT-3.0MW</option>
+
+							<!-- <option value ="">C</option> -->
+							<!-- <option value ="4">D</option> -->
+						<input type="text" name="Number" placeholder="Number of turbines" required>		
+                        <input type="submit" class="btn btn-primary btn-block btn-large" value="Submit">
+                    </form>
+            </div>
+            <div>
+                <p>You can predict multiple input here, via upload file in csv format</p>
+                <form action="/upload" method="POST" enctype = "multipart/form-data">
+                    <input type="file" name="file" />
+                    <select name="type">
+							<option value ="gamesa 2.0MW">Gamesa 2.0MW</option>
+                            <option value ="fuhrlander 1.5MW">Fuhrlander 1.5MW</option>
+                            <option value ="areva multibrid 5MW">Avera multibrid 5MW</option>
+							<option value ="General Electric 1.6 MW">General Electric 1.6 MW</option>
+							<option value ="siemens SWT-3.0MW">siemens SWT-3.0MW</option>
+                    <input type="text" name="Number" placeholder="Number of turbines" required>		
+                    <input type="submit" class="btn btn-primary btn-block btn-large" >
+                </form>                
+            </div>
+            
+        </div>
+    </body>
+</html>
